@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Georgia</title>
+
+  <link rel="icon" type="image/png" href="./TRAVEL.GEORGIA.ICON.png" id="favicon" sizes="any">
+
+  <!-------------- Google Fonts: Montserrat -------------->
+  <!-- font-family: "Montserrat", sans-serif; -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!---------- icons -------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-------------- CSS -------------->
+  <link rel="stylesheet" href="./reset.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!------------ HEADER ------------>
+  <header id="header">
+    <nav class="nav container">
+
+      <a href="#home" class="logo"><i class="fa-solid fa-mountain-sun"></i>Travel<span>Georgia</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <aside id="mobileMenu" class="mobile-menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#weather">Weather</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </aside>
+
+    </nav>
+  </header>
+
+  <!------------ MAIN ------------>
+  <main>
+
+    <!------------ HERO ------------->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container reveal">
+        <h1>Discover the Beauty of <span>Georgia</span></h1>
+        <a href="#destinations" class="btn btn-primary">Start Exploring</a>
+      </div>
+    </section>
+
+    <!------------ ABOUT ------------>
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2>About Georgia</h2>
+          <p>საქართველო — პატარა, მაგრამ წარმოუდგენლად მდიდარი ქვეყანა. აქ ერთმანეთს ხვდება უძველესი ისტორია, ულამაზესი
+            ბუნება და გულითადი სტუმართმოყვარეობა.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-tree"></i></div>
+            <h3>Nature</h3>
+            <p>კავკასიონის მთები, შავი ზღვის სანაპირო, ტყეები და ალპური ტბები ერთ ქვეყანაში.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-landmark"></i></div>
+            <h3>Culture</h3>
+            <p>ისტორია, უნიკალური ანბანი და მსოფლიო მემკვიდრეობის ძეგლები.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon"><i class="fa-solid fa-utensils"></i></div>
+            <h3>Cuisine</h3>
+            <p>ხინკალი, ხაჭაპური, ღვინო — ქართული სუფრა ხელოვნებაა, რომელიც უნდა გასინჯო.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!------------ DESTINATIONS ----->
+    <section class="section section-alt" id="destinations">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Popular Destinations</h2>
+          <p>ადგილები რომელიც აუცილებლად უნდა მონახულო საქართველოში.</p>
+        </div>
+
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">ყველა</button>
+          <button class="filter-btn" data-filter="Mountains">მთა</button>
+          <button class="filter-btn" data-filter="Seaside">ზღვა</button>
+          <button class="filter-btn" data-filter="Nature">ბუნება</button>
+          <button class="filter-btn" data-filter="Heritage">ღირსშესანიშნაობები</button>
+        </div>
+
+        <div class="destinations-grid" id="destinationsGrid">
+        </div>
+      </div>
+    </section>
+
+    <!------------ WEATHER ------------>
+    <section class="section" id="weather">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Current Weather</h2>
+          <p>მიმდინარე ამინდი საქართველოს ქალაქებში</p>
+        </div>
+
+        <div class="weather-grid" id="weatherGrid">
+          <div class="weather-loading">Loading weather...</div>
+        </div>
+      </div>
+    </section>
+
+    <!------------ CONTACT ------------>
+    <section class="section section-alt" id="contact">
+      <div class="container contact-wrap">
+        <div class="section-header reveal">
+          <h2>Get in Touch</h2>
+          <p>გვითხარი, სად გინდა მოგზაურობა — დაგეხმარებით სრულყოფილი მარშრუტის შედგენაში.</p>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name..." required />
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3" placeholder="Tell us about your dream trip..."
+              required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!------------ FOOTER ------------>
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <i class="fa-solid fa-mountain-sun"></i>
+          Travel <span>Georgia</span>
+        </a>
+        <p>Discover the beauty of the Georgia.</p>
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Gmail: <span> Gmail@example.com</span></p>
+        <p>Phone: <span>+995 123 456 789</span></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!----------- Scroll To Top ------>
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!----------- Cookie ------------->
+  <div class="cookie" id="cookie">
+    <p>გამოვიყენებთ ქუქი-ფაილებს თქვენი მოგზაურობის გასაუმჯობესებლად</p>
+    <button class="btn btn-primary " id="acceptCookie">Accept</button>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
