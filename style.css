@@ -255,7 +255,7 @@ aside.mobile-menu {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10, 37, 64, 0.75), rgba(30, 136, 229, 0.55));
+  background: rgba(10, 37, 64, 0.75);
 }
 
 .hero-content {
