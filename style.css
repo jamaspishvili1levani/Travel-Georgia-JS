@@ -202,7 +202,7 @@ header.scrolled .nav-links a {
 .burger span {
   width: 100%;
   height: 3px;
-  background-color: var(--dark-blue);
+  background-color: black;
   border-radius: 3px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
